@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smart_thermostats
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    username: g.japiashvili@gmail.com
+    password: replacewithpassword
+    port: 587
+    from: g.japiashvili@gmail.com
+  application-name: SmartThermostats
+server:
+  port: 8462
+
+jwt:
+  secret-key: 703373367639792F423F4528482B4D6251655468576D5A7134743777217A2543
+  days-token-expiration: 1
+
+access-token:
+  private: access-refresh-token-keys/access-token-private.key
+  public: access-refresh-token-keys/access-token-public.key
+  expires-minutes: 10
+refresh-token:
+  private: access-refresh-token-keys/refresh-token-private.key
+  public: access-refresh-token-keys/refresh-token-public.key
+  expires-days: 7

@@ -1,0 +1,545 @@
+{
+	"info": {
+		"_postman_id": "ecbca984-4051-423d-9a64-2b8917e6e96f",
+		"name": "Smart Thermostats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25579987"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get my user info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJNeSBPbmxpbmUgU2hvcCIsInN1YiI6IjEiLCJleHAiOjE2ODA3OTQyMzcsImlhdCI6MTY4MDc5MzkzNywiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVU0VSIn1dfQ.fTfnyqcmHUYQd1zRjFxU0Kk5OEG_HLO6z6N7dC-A6ZRmTehkGOU3lStVnidhlNHgRhMhZ06WrgtyGAndecfIytjMmXoR3R2_U0cymSVhTWnimkN9UjorSngBe1z_J75JiUusDScogwtTv_rN4RxlPd7S7UFtxru3s55Zn1455nDsIzMISSbWV-zmiXuWaltqzecm9Ipnt994Dc-XTyQQWlwLE036bD-6OfFQewzawpPUVgt-l1ql7xUi9aXxXD0s5zQ0jEd5ACI-etENu_S6EwI0ImwG4nivy2hogv3B2k8H725iRgllVXZjmbF_e3fZimVdeqKEsNfBcEW9hszgTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update my user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJNeSBPbmxpbmUgU2hvcCIsInN1YiI6IjMxMDIiLCJleHAiOjE2Nzg1NDA0MzEsImlhdCI6MTY3ODU0MDEzMSwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVU0VSIn1dfQ.HLPSnGm2qFZVJ_vqTgXtGjaQ1N8zIGIu8g4feTTTYUW8c1_qnmp07FFG9FiE6WnaejXq-O74blWC55JOoOxeD-eop7GdnVAeoxJS44eTGR8nbRZ1rW5ahb3iBrX321p8DoqP_z8vfyY9jm48fVvbEazwo0Y7j2lNY-L6ZRBVFwvwuWboYj9XXNPXuPiPJHiPNpZNy6q7P0yQo6fljrV2yWbnVdex7lS0W17nORDEdK8Ce3-QdiTZ7dfDfNZQ0HVAH1_CUX-A8rdohPFbn_kobQ7w8gDQrFpjtwhFE35giZ0bW1qlOsUUtXEyyrRAQkMY7ZKSkA4FZwYmaZZE7qhsnA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jondi\",\r\n    \"lastName\": \"Baghaturia\",\r\n    \"receiveAlerts\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8462/api/v1/users/me/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate my user account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJNeSBPbmxpbmUgU2hvcCIsInN1YiI6IjEiLCJleHAiOjE2Nzg1NDI5MTIsImlhdCI6MTY3ODU0MjYxMiwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVU0VSIn1dfQ.RqHpYk16zLM9PLRCOUBV-FUBwThQ79Ists5FvWsTEp-TOJwdb1-9xEjj6Q54dAKqDCqJUpvf4FfbMNEPjc3nPuYdiuG_pMYiLaMkG9wwLQnwanyzI0PY_VHXTFHoWW5w_V53fv6vIo1ZNrWjYwDttHJJ444ADEi_N49FHpBPMNCTZRzO9w-H-8kOIcYgpA6zkaQI9QcrnLAydHJk4FJI5ob-ekLmI2q5BIJ2ePohA4OrGDXPv4tspM9OB5BX0i_dRZVs2yVKB5_6FGpu5Lhqt2Dw_r515E7ZP3lc8cB5E6evD6lV_wYpwA40szNOiyikNZkfDowjPSIcI63ooOQ2Gw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/users/me/deactivate-account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me",
+								"deactivate-account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4NjU2ODIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4NjUwODIsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiQURNSU4ifSx7InJvbGUiOiJVU0VSIn1dfQ.0F53pj3L_Xtkrad0rdL0hNKmbTxYItfPGsE5750Zwt6GUXq5144WYsI3VfTda3tYsbuo-xiELl-U_y-ZPj8QaVxXzPToHeSXdmKguE3q8-FEdnq_D4XKscerZrQjtIas2WIKiOfnAWTY9knxxEajlsYOY2h0gMxOMOX2TAj3J2STze-qBAC-ApYphVKsK4BeVt6IReh7daf18q7CW8E59VL6fhSCj3CUnwyWmn_QrA3-JSDR34kagZ4JiHg_i1X6oCW3NMn874BewR1kFfTFTjbi0BllRHkvzYDiSNTt9IcfIJmp8FoTr90DsvrJEGZixoivMtkcXqy9CPeC27IpEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/admin/users/3102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"3102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Thermostats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4NjU2ODIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4NjUwODIsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiQURNSU4ifSx7InJvbGUiOiJVU0VSIn1dfQ.0F53pj3L_Xtkrad0rdL0hNKmbTxYItfPGsE5750Zwt6GUXq5144WYsI3VfTda3tYsbuo-xiELl-U_y-ZPj8QaVxXzPToHeSXdmKguE3q8-FEdnq_D4XKscerZrQjtIas2WIKiOfnAWTY9knxxEajlsYOY2h0gMxOMOX2TAj3J2STze-qBAC-ApYphVKsK4BeVt6IReh7daf18q7CW8E59VL6fhSCj3CUnwyWmn_QrA3-JSDR34kagZ4JiHg_i1X6oCW3NMn874BewR1kFfTFTjbi0BllRHkvzYDiSNTt9IcfIJmp8FoTr90DsvrJEGZixoivMtkcXqy9CPeC27IpEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/admin/thermostats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"thermostats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Admin Rights to a User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4NjU2ODIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4NjUwODIsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiQURNSU4ifSx7InJvbGUiOiJVU0VSIn1dfQ.0F53pj3L_Xtkrad0rdL0hNKmbTxYItfPGsE5750Zwt6GUXq5144WYsI3VfTda3tYsbuo-xiELl-U_y-ZPj8QaVxXzPToHeSXdmKguE3q8-FEdnq_D4XKscerZrQjtIas2WIKiOfnAWTY9knxxEajlsYOY2h0gMxOMOX2TAj3J2STze-qBAC-ApYphVKsK4BeVt6IReh7daf18q7CW8E59VL6fhSCj3CUnwyWmn_QrA3-JSDR34kagZ4JiHg_i1X6oCW3NMn874BewR1kFfTFTjbi0BllRHkvzYDiSNTt9IcfIJmp8FoTr90DsvrJEGZixoivMtkcXqy9CPeC27IpEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/admin/users/2/assign-admin-rights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"2",
+								"assign-admin-rights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Admin Rights from a User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4NjU2ODIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4NjUwODIsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiQURNSU4ifSx7InJvbGUiOiJVU0VSIn1dfQ.0F53pj3L_Xtkrad0rdL0hNKmbTxYItfPGsE5750Zwt6GUXq5144WYsI3VfTda3tYsbuo-xiELl-U_y-ZPj8QaVxXzPToHeSXdmKguE3q8-FEdnq_D4XKscerZrQjtIas2WIKiOfnAWTY9knxxEajlsYOY2h0gMxOMOX2TAj3J2STze-qBAC-ApYphVKsK4BeVt6IReh7daf18q7CW8E59VL6fhSCj3CUnwyWmn_QrA3-JSDR34kagZ4JiHg_i1X6oCW3NMn874BewR1kFfTFTjbi0BllRHkvzYDiSNTt9IcfIJmp8FoTr90DsvrJEGZixoivMtkcXqy9CPeC27IpEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/admin/users/2/revoke-admin-rights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"2",
+								"revoke-admin-rights"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/auth/verify-email?signupKey=sdfsdfhdefgdfgdfg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "signupKey",
+									"value": "sdfsdfhdefgdfgdfg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"g.japiashvili@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8462/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "6ab97988-79d1-4fac-9f99-446d9a34b653",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Giorgi\",\r\n    \"lastname\": \"Jafiashvili\",\r\n    \"email\": \"giorgi.jafiashvili@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8462/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJNeUFwcCIsInN1YiI6IjEiLCJleHAiOjE2ODM0MTI3MzksInR5cGUiOiJyZWZyZXNoIiwiaWF0IjoxNjgwODIwNzM5fQ.iDP-mCV1tMgcxAGJqT9x_hL5TYt_uz7d__nswhNcAA_AHStQsMSXOz8jGmsF-2vcHtoKbIyp9xS_Ai10ETwePqFyeyw9YDqRLaormOyo_9ZiXu0MkS1O2lTFpUwRXV0S2K_i9H5VCp8kXoTkvAm1FOuNIbfZkhz2XDiHk-cta7aI4nX6JC5Bao6Q7Ss1TlGPcl0464U9qNwAcbOFJVV6VXCR1ZORlfGto9_voEt5OoMrrWN81lpkZ64NYfRHL77SaTEYN2aIHtgZed_avwG7PAe73rpeQeB0fU-9xtOz5uFMj4bdDoJO1xoQw7VV4cPx5_VU3H8JCOZKiXqKsU79gw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8462/api/v1/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Thermostat",
+			"item": [
+				{
+					"name": "Get My Thermostats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4MjEwMzksInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4MjA3MzksImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVVNFUiJ9XX0.I77PnaDkwqPVexhD-GsKXHk938kLHiKCQ6mT89FokUTRwVRp4a5se-6NzQkPLKdLdDA2UtzwAk9vzHlVgsmF_aryRHV7QyjKlcC_Pj3FF8Z6gLAmCnEf-QumxmCYFI2L8MXeyLzfxD9ti3D1HAwKZi8LEGMacIC2lj00Gk_DbVKzIuWdhO3wyEtDLjwTq8_B67hneS5_Yy9KsGUHU37uY1G1d3WFiEIZln5qArqjBwwg4xOY_VOMMBAl3Lcqp5Yvh24s1H_1goCJgE4IDGpbScidv0_QjQpv4m0HXQkl89MjTY-dqmTcIzlN8n8LmBXvKclgf0AbGSRJFHpo-_WhPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/thermostats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"thermostats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Thermostat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiTXlBcHAiLCJleHAiOjE2ODA4NjU2ODIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODA4NjUwODIsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiQURNSU4ifSx7InJvbGUiOiJVU0VSIn1dfQ.0F53pj3L_Xtkrad0rdL0hNKmbTxYItfPGsE5750Zwt6GUXq5144WYsI3VfTda3tYsbuo-xiELl-U_y-ZPj8QaVxXzPToHeSXdmKguE3q8-FEdnq_D4XKscerZrQjtIas2WIKiOfnAWTY9knxxEajlsYOY2h0gMxOMOX2TAj3J2STze-qBAC-ApYphVKsK4BeVt6IReh7daf18q7CW8E59VL6fhSCj3CUnwyWmn_QrA3-JSDR34kagZ4JiHg_i1X6oCW3NMn874BewR1kFfTFTjbi0BllRHkvzYDiSNTt9IcfIJmp8FoTr90DsvrJEGZixoivMtkcXqy9CPeC27IpEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"Amazon\",\r\n    \"temperatureThreshold\": \"31\",\r\n    \"powerSource\": \"Hybrid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8462/api/v1/thermostats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"thermostats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete My Thermostat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJNeSBPbmxpbmUgU2hvcCIsInN1YiI6IjEiLCJleHAiOjE2ODA4MTk3NDksImlhdCI6MTY4MDgxOTQ0OSwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVU0VSIn1dfQ.0mwoQJAdh32LOmHqKP-bszqe7GBRxSemAiPlWr546Bo9ueVcAxYnJpVNLTVYMiwRj2o1OQu9cJYSPXmAS1BqVKNy6Yd6T3IurvFEoCV2VgUciCffUMgQDxa-xL-x0yY0nRLPsGwBiosv_pqAO1kkUqYZ4eSQgqcX5_AkDJOSv6dqL-pSMLrKiCNhR5DIs-WX-G7yXAR7lXxBq_5U8QhuSTDOWa9yn4rd3o6Le6rYOfYR-i1u4MtOIVEjJKkA6YeA2JekvDi_3TXEPlgMoRvHUHjk0G_buXbKnBZPe8Wk_YTtBiqdIsHwNW1QWFhoVM3E2PyWmBwQn8Ib7DnzN8KcPQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8462/api/v1/thermostats/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8462",
+							"path": [
+								"api",
+								"v1",
+								"thermostats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
